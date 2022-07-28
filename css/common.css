@@ -45,17 +45,18 @@ div[fill] {
 	width: 50%;
 }
 
-nav a {
+nav > a, nav div[dropdown]{
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	height: 60px;
 	padding: 0em 1.5em;
-	transition: filter 300ms ease;;
+	transition: text_decoration 300ms ease;;
+	text-decoration: none;
 }
 
-nav a:hover {
-	filter: brightness(0.8);
+nav a:hover, nav div[dropdown]:hover {
+	text-decoration: underline;
 }
 
 nav a:visited{
@@ -63,11 +64,11 @@ nav a:visited{
 	color: var(--primary-color);
 }
 
-nav a[dropdown] {
+nav div[dropdown] {
 	position: relative;
 }
 
-nav a[dropdown]:hover .active {
+nav div[dropdown]:hover .active {
 	display: block;
 }
 
@@ -79,17 +80,22 @@ nav a[dropdown]:hover .active {
 	position: absolute;
 	top: 60px;
 	right: 0;
-	background: rgba(255,255,255,0.4);
+	background: #fff;
 	box-shadow: 0 10px 15px 0 rgba(0,0,0,0.05);
+	z-index: 1;
 }
 
-.link-dropdown label {
+.link-dropdown a {
 	cursor: pointer;
 	padding: 1em 2em;
 	white-space: nowrap;
 	display: block;
 }
 
-.link-dropdown label:hover {
+.link-dropdown a:hover {
 	color: #1c2541;
+}
+
+.hidden{
+	display: none;
 }

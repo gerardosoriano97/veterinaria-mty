@@ -14,7 +14,7 @@ main{
     grid-area: content;
 }
 
-#content p {
+#content p, #content li{
     color: black;
 }
 
